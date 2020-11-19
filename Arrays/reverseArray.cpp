@@ -32,6 +32,17 @@ int *reverseWithAlt(int arr[], int n)
     return temp;
 }
 
+/* Function to reverse arr[] without recursion or extra array*/
+
+void reverseWithoutAnything(int arr[],int n){
+	int i=0;
+	while(i<n){
+		arr[i]=(arr[i]+arr[n])-(arr[n]=arr[i]);
+		i++;
+		n--;
+	}
+}
+
 /* Function to Display the array */
 
 void DisplayArray(int arr[], int n)
@@ -53,9 +64,11 @@ int main()
 
     cout << "Enter the elements of the array" << endl;
     int arr[n];
+    int arr_2[n];	//array for another type of recursion as arr is modified by recurion function
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
+        arr_2[i]=arr[i];
     }
 
     cout << "Reverse using Alternate Array method" << endl;
@@ -65,4 +78,8 @@ int main()
     cout << "Reverse using Recursive Method" << endl;
     reverseRecursive(arr, 0, n - 1);
     DisplayArray(arr, n);
+    
+    cout << "Reverse using while loop Method" << endl;
+    reverseWithoutAnything(arr_2,n-1);
+    DisplayArray(arr_2, n);
 }
