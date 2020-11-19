@@ -35,9 +35,15 @@ int *reverseWithAlt(int arr[], int n)
 /* Function to reverse arr[] without recursion or extra array*/
 
 void reverseWithoutAnything(int arr[],int n){
+
+    //swapping values from beginning and end until u reach the midpoint
+
 	int i=0;
 	while(i<n){
+
+        //swap the values of ith and nth position
 		arr[i]=(arr[i]+arr[n])-(arr[n]=arr[i]);
+        
 		i++;
 		n--;
 	}
